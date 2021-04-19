@@ -1,0 +1,23 @@
+import numpy as N
+outputstr = [’\n’]*len(T)
+for i in xrange(len(T)):
+outputstr[i] = \
+str(T[i]) + outputstr[i]
+#- Convert to string
+# and add newlines
+fileout = open(’one-col_temp.txt’, ’w’)
+fileout.writelines(outputstr)
+fileout.close() #- Write out
+# to the
+# file
+filein = open(’one-col_temp.txt’, ’r’)
+inputstr = filein.readlines()
+filein.close() #- Read in
+# from the
+# file
+Tnew = N.zeros(len(inputstr), ’f’)
+for i in xrange(len(inputstr)):
+Tnew[i] = float(inputstr[i])
+#- Convert
+# string to
+# numbers
